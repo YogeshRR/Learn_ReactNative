@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text>Another Text</Text>
       <Text>On Two Device</Text>
+      <Button title='Tap Here'/>
       <StatusBar style="auto" />
     </View>
   );
