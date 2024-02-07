@@ -14,8 +14,11 @@ export default function App() {
     ]);
   }
 
-  function deleteHandler() {
+  function deleteHandler(id) {
     console.log("Delete clicked");
+    setCourseGoals((currentGoal) => {
+      return currentGoal.filter((goal) => goal.id == id);
+    });
   }
 
   return (
@@ -26,7 +29,11 @@ export default function App() {
           data={courseGoals}
           renderItem={(itemData) => {
             return (
-              <GoalItem text={itemData.item.myText} onDelete={deleteHandler} />
+              <GoalItem
+                text={itemData.item.myText}
+                onDelete={deleteHandler}
+                id={itemData.item.id}
+              />
             );
           }}
           keyExtractor={(item, index) => {
